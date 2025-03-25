@@ -2,7 +2,11 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: "https://saratapusoa.com",
+  methods: ["POST"],
+}));
 app.use(express.json());
 
 app.post("/api/contact", (req, res) => {
